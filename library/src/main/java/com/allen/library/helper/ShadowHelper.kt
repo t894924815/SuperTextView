@@ -106,6 +106,8 @@ class ShadowHelper {
         shadowTopWidth = attributeSetData.shadowTopWidth
         shadowRightWidth = attributeSetData.shadowRightWidth
         shadowBottomWidth = attributeSetData.shadowBottomWidth
+        // 此处设置一次 padding 以防多次设置, 造成不生效或延迟生效
+        targetView?.setPadding(shadowLeftWidth.toInt(), shadowTopWidth.toInt(), shadowRightWidth.toInt(), shadowBottomWidth.toInt())
     }
 
 
@@ -136,7 +138,6 @@ class ShadowHelper {
     }
 
     private fun setShadowWidthAndContentPadding() {
-        targetView?.setPadding(shadowLeftWidth.toInt(), shadowTopWidth.toInt(), shadowRightWidth.toInt(), shadowBottomWidth.toInt())
         shadowMaxWidth = listOf(shadowLeftWidth, shadowRightWidth, shadowTopWidth, shadowBottomWidth).max()
                 ?: 0f
         maxRadius = (height - shadowTopWidth - shadowBottomWidth) / 2

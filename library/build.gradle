@@ -2,11 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 //apply plugin: 'com.novoda.bintray-release'//添加
-
 // JitPack Maven
 apply plugin: 'com.github.dcendents.android-maven'
-// Your Group
-group = 'com.github.lygttpod'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -42,3 +39,8 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    PUBLISH_ARTIFACT_ID = "SuperTextView"
+}
+
+apply from: '../publish.gradle'

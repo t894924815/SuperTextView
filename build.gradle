@@ -2,9 +2,11 @@
 
 buildscript {
     ext.kotlin_version = '1.4.20'
+    ext.dokka_version = '1.4.10.2'
     repositories {
         google()
         jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.1'
@@ -13,6 +15,7 @@ buildscript {
         // in the individual module build.gradle files
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" // Add this line
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:$dokka_version"
     }
 }
 
